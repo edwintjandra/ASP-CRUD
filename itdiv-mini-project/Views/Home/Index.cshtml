@@ -1,7 +1,18 @@
 ﻿@page
+@using System.Security.Claims
 @{
 
 
+}
+
+@User.Identity.IsAuthenticated // Check if the user is authenticated
+@if (User.Identity.IsAuthenticated)
+{
+    <p>User ID: @User.FindFirst("UserID")?.Value.ToString()</p>
+
+    <form asp-controller="Account" asp-action="Logout" method="post">
+        <button type="submit" class="nav-link text-dark" style="border: none; background: none;">Logout</button>
+    </form>
 }
 
 <h1>hello</h1>

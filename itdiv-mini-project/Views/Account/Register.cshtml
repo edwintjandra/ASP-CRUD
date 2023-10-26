@@ -1,0 +1,11 @@
+﻿@page
+
+<h1>welcome to Register</h1>
+
+<form method="post" action="/Account/Registration">
+    @Html.AntiForgeryToken() 
+    <input type="text" name="Name" placeholder="name" />
+    <input type="text" name="Email" placeholder="email"/>
+    <input type="text" name="Password" placeholder="password"/>
+    <button>submit</button>
+</form>
