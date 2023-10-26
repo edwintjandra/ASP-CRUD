@@ -16,18 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\UsEr\source\repos\itdiv-mini-project\itdiv-mini-project
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/UsEr/source/repos/itdiv-mini-project/itdiv-mini-project/Views/Account/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/UsEr/source/repos/itdiv-mini-project/itdiv-mini-project/Views/Account/LoginError.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbkVycm9yLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/UsEr/source/repos/itdiv-mini-project/itdiv-mini-project/Views/Account/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/UsEr/source/repos/itdiv-mini-project/itdiv-mini-project/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +46,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/UsEr/source/repos/itdiv-mini-project/itdiv-mini-project/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/UsEr/source/repos/itdiv-mini-project/itdiv-mini-project/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/UsEr/source/repos/itdiv-mini-project/itdiv-mini-project/Views/User/LoginError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbkVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/UsEr/source/repos/itdiv-mini-project/itdiv-mini-project/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/UsEr/source/repos/itdiv-mini-project/itdiv-mini-project/Views/_ViewImports.cshtml]

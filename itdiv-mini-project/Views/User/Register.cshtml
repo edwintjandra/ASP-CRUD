@@ -1,0 +1,60 @@
+﻿@page
+ 
+
+<form method="post" action="/User/Registration" id="registrationForm" class="form">
+    @Html.AntiForgeryToken() 
+    <div class="form-header">
+        <p class="header-text">Register</p>
+    </div>
+    <div class="form-body">
+        <div>
+            <label>Name</label>
+            <input type="text" name="Name" placeholder="Name" />
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" name="Email" placeholder="email" />
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="text" name="Password" placeholder="password" />
+        </div>
+        <div>
+            <label>Confirm Password</label>
+            <input type="text" name="" placeholder="Confirm password" />
+        </div>
+        <div>
+            <label for="TocConfirmation">I agree to the Terms of Service</label>
+            <input type="checkbox" name="TocConfirmation" id="TocConfirmation" required />
+        </div>
+      
+    </div>
+    
+    <button>submit</button>
+</form>
+
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function (event) {
+        var name = document.querySelector("[name='Name']").value;
+        var email = document.querySelector("[name='Email']").value;
+        var password = document.querySelector("[name='Password']").value;
+        var emailPattern = /^[A-Za-z0-9]+@@[A-Za-z0-9]+\.com$/;
+ 
+
+        if (name.trim() === "") {
+            alert("Name is required.");
+            event.preventDefault();
+        }
+ 
+        if (email.trim() === "" || !email.match(emailPattern)) {
+            alert("Invalid email address.");
+            event.preventDefault();
+        }
+
+        if (password.trim() === "") {
+            alert("Password is required.");
+            event.preventDefault();
+        }
+    });
+</script>

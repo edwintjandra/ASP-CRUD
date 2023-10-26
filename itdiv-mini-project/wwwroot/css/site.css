@@ -1,18 +1,205 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    background-color: ECECEC;
+    margin:0;
+    padding:0;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
 }
+
 
 html {
   position: relative;
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+.container {
+    width:85%;
+    margin:auto;
 }
+.my-navbar {
+    background-color: white;
+    color: #000;
+    margin: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+}
+
+.my-navbar a { 
+    color: #000;
+    text-decoration: none;
+}
+
+.my-navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+
+.my-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.my-nav-list li {
+    margin: 0 10px;
+}
+
+.my-nav-list li a {
+    color: #888; /* Gray color for links */
+}
+
+.footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align: center;
+    background-color: #232323;
+    color:white;
+    padding:20px;
+}
+
+.form {
+    width: 60%;
+    margin: 0 auto; /* Center the form horizontally */
+    margin-bottom:50px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-header {
+    margin: 0;
+    padding: 5px;
+    background-color: #E5E6E7;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+
+.form-body {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-body > div {
+    display:flex;
+    justify-content:space-between;
+}
+
+ 
+
+.form-body label {
+    width: 30%; /* Adjust the width as needed */
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form input {
+    flex: 1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+ .form button {
+    width: 20%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom:10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: 1px solid #333;
+    background-color: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .btn:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+/* Primary button style (blue background and white text) */
+.btn-primary {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .btn-warning:hover {
+        background-color: #ffaa00;
+    }
+
+/* Danger button style (red background and white text) */
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .styled-table th, .styled-table td {
+        padding: 8px 12px;
+        text-align: left;
+        border: 1px solid #ccc;
+    }
+
+    .styled-table tbody tr:nth-child(odd) {
+        background-color: #f2f2f2; /* Gray background for odd rows */
+    }
+
+    .styled-table tbody tr:nth-child(even) {
+        background-color: #fff; /* White background for even rows */
+    }
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+
+
+

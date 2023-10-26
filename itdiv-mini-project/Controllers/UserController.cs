@@ -8,10 +8,10 @@ using System.Security.Claims;
 
 namespace itdiv_mini_project.Controllers
 {
-    public class AccountController : Controller
+    public class UserController : Controller
     {
         private readonly IConfiguration _configuration;
-        public AccountController(IConfiguration configuration)
+        public UserController(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -26,22 +26,31 @@ namespace itdiv_mini_project.Controllers
         }
 
         //registration functionallity
+        //register validation with model done.
         [HttpPost]
-        public string Registration(Account account)
+        public string Registration(User account)
         {
-            SqlConnection con = new SqlConnection(_configuration.GetConnectionString("DefaultConnection").ToString());
-            SqlCommand cmd = new SqlCommand("INSERT INTO Account(Name, Email, Password) VALUES('" + account.Name + "', '" + account.Email + "','" + account.Password + "')", con);
-            con.Open();
-            int i = cmd.ExecuteNonQuery();
-            con.Close();
-            if (i > 0)
+            if (ModelState.IsValid)
             {
-                return "Data inserted successfully";
+                SqlConnection con = new SqlConnection(_configuration.GetConnectionString("DefaultConnection").ToString());
+                SqlCommand cmd = new SqlCommand("INSERT INTO [User] (Name, Email, Password) VALUES('" + account.Name + "', '" + account.Email + "','" + account.Password + "')", con);
+                con.Open();
+                int i = cmd.ExecuteNonQuery();
+                con.Close();
+                if (i > 0)
+                {
+                    return "Data inserted successfully";
+                }
+                else
+                {
+                    return "Error";
+                }
             }
-            else
-            {
-                return "Error";
+            else {
+                return "Validation failed. Please check your input.";
+
             }
+
         }
 
         public string seeMyUser() {
@@ -56,12 +65,14 @@ namespace itdiv_mini_project.Controllers
                 return "ora ono";
             }
         }
+
         //login functionality 
         [HttpPost]
-        public async Task<IActionResult> Login(Account account)
+        public async Task<IActionResult> Login(User account)
         {
+            //login pake validasi lagi?
             SqlConnection con = new SqlConnection(_configuration.GetConnectionString("DefaultConnection").ToString());
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Account WHERE Email = '" + account.Email + "' AND Password = '" + account.Password + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [User] WHERE Email = '" + account.Email + "' AND Password = '" + account.Password + "'", con);
             DataTable dt = new DataTable();
 
             
@@ -70,10 +81,12 @@ namespace itdiv_mini_project.Controllers
             {
                 DataRow row = dt.Rows[0]; // Assuming only one record is expected
                 String UserID =row["UserID"].ToString();
-                
+                string userName = row["Name"].ToString();
+
                 var claims = new List<Claim>
                   {
-                    new Claim("UserID", UserID)
+                    new Claim("UserID", UserID),
+                    new Claim("Name", userName)
                   };
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
