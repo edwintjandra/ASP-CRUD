@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - itdiv_mini_project</title>
      <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
  </head>
 <body>
     <header>
@@ -41,14 +47,14 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div> <a href="#">twitter</a>  <a href="#">facebook</a>  <a href="#">instagram</a></div>
+        <div class="icons"> <a href="#"><i class="lni lni-twitter-original"></i></a>  <a href="#"><i class="lni lni-facebook-fill"></i></a>  <a href="#"><i class="lni lni-instagram"></i></a></div>
         <div>Copyright &copy; 2021 Edwin Tjandraatmadja. All Rights Reserved </div>
      </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+
 </body>
 </html>

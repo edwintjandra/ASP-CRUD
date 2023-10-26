@@ -17,30 +17,35 @@
         </div>
         <div>
             <label>Password</label>
-            <input type="text" name="Password" placeholder="password" />
+            <input type="password" name="Password" placeholder="password" />
         </div>
         <div>
             <label>Confirm Password</label>
-            <input type="text" name="" placeholder="Confirm password" />
+            <input type="text" name="" placeholder="Confirm password" id="confirmedPassword" />
         </div>
         <div>
-            <label for="TocConfirmation">I agree to the Terms of Service</label>
-            <input type="checkbox" name="TocConfirmation" id="TocConfirmation" required />
+            <label for="TocConfirmation"></label>
+            <input type="checkbox" name="TocConfirmation" id="TocConfirmation" /> By Clicking register, i agree to the terms and conditions
+        </div>
+        <div>
+            <label></label>
+            <button>submit</button>
         </div>
       
     </div>
     
-    <button>submit</button>
+  
 </form>
 
 
 <script>
     document.getElementById("registrationForm").addEventListener("submit", function (event) {
-        var name = document.querySelector("[name='Name']").value;
+         var name = document.querySelector("[name='Name']").value;
         var email = document.querySelector("[name='Email']").value;
         var password = document.querySelector("[name='Password']").value;
+        var confirmPassword = document.getElementById("confirmedPassword").value;
         var emailPattern = /^[A-Za-z0-9]+@@[A-Za-z0-9]+\.com$/;
- 
+        var tocConfirmation = document.getElementById("TocConfirmation").checked;
 
         if (name.trim() === "") {
             alert("Name is required.");
@@ -56,5 +61,16 @@
             alert("Password is required.");
             event.preventDefault();
         }
+
+        if (password !== confirmPassword) {
+            alert("Password and Confirm Password do not match.");
+            event.preventDefault();
+        }
+
+        if (!tocConfirmation) {
+            alert("Please agree to the Terms of Service.");
+            event.preventDefault();
+        }
+       
     });
 </script>

@@ -7,11 +7,21 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <p >Welcome, @User.FindFirst("Name")?.Value</p>
-    <p>this is your dashboard</p>
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <p>Dashboard</p>
+        </div>
+        <div class="dashboard-body">
+            <p>You are logged in!</p>
+        </div>
+    </div>
+}else
+{
+    <div class="welcome-message">
+        <h1>Welcome to Wearhouse</h1>
+        <p>wearhouse is a website to manage clothing, and many more.</p>
+        <a asp-area="" asp-controller="Home" asp-action="About">Learn More!</a>
+    </div>
 }
 
-
-
-<h1>hello</h1>
  
