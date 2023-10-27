@@ -1,3 +1,9 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100;
+}
+
 html {
     font-size: 14px;
     background-color: ECECEC;
@@ -10,8 +16,10 @@ body {
     padding: 0;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
-}
+    padding-bottom:180px;
+    height:100vh;
 
+}
 
 html {
   position: relative;
@@ -22,6 +30,19 @@ html {
     width:85%;
     margin:auto;
 }
+.my-burger-menu {
+    display: none; /* Hide initially on larger screens */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-bar {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: 3px 0;
+}
+
 .my-navbar {
     background-color: white;
     color: #000;
@@ -206,7 +227,7 @@ html {
 }
 
 .dashboard {
-    width: 60%;
+    width: 90%;
     margin: 0 auto; /* Center the dashboard horizontally */
     margin-bottom: 50px;
     background-color: #f5f5f5;
@@ -282,7 +303,7 @@ html {
         margin: 0;
     }
 
-#closePopupButton {
+.closePopupButton {
     display: block;
     margin-top: 10px;
     padding: 5px 10px;
@@ -294,11 +315,47 @@ html {
 }
 
 
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
+
+@media (max-width: 768px) {
+    .dashboard {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    body {
+        padding-bottom:100px;
+    }
+
+    .form {
+        width:100%;
+    }
+
+    .container {
+        width:90%;
+    }
+
+    .my-burger-menu {
+        display: flex;
+    }
+
+    .my-nav-list {
+        display: none; /* Hide the navigation links initially on smaller screens */
+        flex-direction: column;
+        background-color: white; /* Background for the menu */
+        position: absolute;
+        top: 70px; /* Adjust as needed to position the menu below the navbar */
+        right: 0;
+        width: 100%;
+        padding: 5px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show the navigation links when the burger button is clicked */
+    .my-burger-menu.active + .my-nav-list {
+        display: flex;
     }
 }
+
 
 
 

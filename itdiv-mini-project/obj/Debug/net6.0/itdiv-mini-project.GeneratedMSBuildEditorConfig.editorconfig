@@ -16,10 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\UsEr\source\repos\itdiv-mini-project\itdiv-mini-project
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/UsEr/source/repos/itdiv-mini-project/itdiv-mini-project/Views/Categories/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/UsEr/source/repos/itdiv-mini-project/itdiv-mini-project/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

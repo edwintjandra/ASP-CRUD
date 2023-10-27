@@ -5,9 +5,8 @@
 }
 
 <h1>Product Categories</h1>
+<a class="btn btn-primary btn-sm create-popup" href="#">Add Category</a>
 
- 
-<a class="btn btn-primary btn-md" style="margin-bottom:10px" asp-action="Create">Add Category</a>
  
 <table class="styled-table">
     <thead>
@@ -25,50 +24,105 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                 <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                  <a class="btn btn-primary btn-sm" id="openPopupButton" href="#">Testing</a>
+                    <a class="btn btn-warning btn-sm edit-popup" data-target="edit-popup-background-@item.Id">Edit</a> |
+                    <!-- edit popup -->
+                    <div class="edit-popup-background popup-background" id="edit-popup-background-@item.Id">
+                    <div class="edit-popup-dialog popup-dialog" id="edit-popup-dialog-@item.Id">
+                            <form asp-action="Edit" asp-controller="Categories" method="post" class="form">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" name="Id" value="@item.Id" />
+                                <div class="form-group">
+                                    <label for="Name" class="control-label">Category Name</label>
+                                    <input type="text" name="Name" class="form-control" value="@item.Name" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Save" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        <button class="edit-close-popup closePopupButton">Close</button>
+                    </div>
+                    </div>
+
+
+                    <a class="btn btn-danger btn-sm delete-popup" data-target="delete-popup-background-@item.Id">Delete</a>
+                    <!-- delete popup -->
+                    <div class="delete-popup-background popup-background" id="delete-popup-background-@item.Id">
+                        <div class="delete-popup-dialog popup-dialog" id="delete-popup-dialog-@item.Id">
+                            <form asp-action="Delete" asp-controller="Categories" method="post">
+                                <input type="hidden" name="Id" value="@item.Id" />
+                                <div class="form-group">
+                                    <input type="submit" value="Delete" class="btn btn-danger" />
+                                    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+                                </div>
+                            </form>
+                            <button class="delete-close-popup closePopupButton">Close</button>
+                        </div>
+                    </div>
                 </td>
         </tr>
+           
 }
     </tbody>
 </table>
 
 
-
-<div id="popupBackground" class="popup-background"></div>
-<div id="popupDialog" class="popup-dialog">
-    <form asp-action="Create">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            
+<!-- create popup -->
+<div class="create-popup-background popup-background"></div>
+<div class="create-popup-dialog popup-dialog" >
+    <form method="post" action="/Categories/Create" id="categoryForm" class="form">
+        @Html.AntiForgeryToken()
+        <div class="form-header">
+            <p class="header-text">Create Category</p>
         </div>
-        <div class="form-group">
-            <input type="submit" value="Create" class="btn btn-primary" />
+        <div class="form-body">
+            <div>
+                <label for="Name">Category Name</label>
+                <input type="text" name="Name" class="form-control" placeholder="Category name" />
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Create</button> 
+            </div>
         </div>
     </form>
-    <button id="closePopupButton">Close</button>
+    <button class="create-close-popup closePopupButton">Close</button>
 </div>
 
 <script>
-    if (typeof $ !== "undefined" || typeof jQuery !== "undefined") {
-        // jQuery is available on this page
-        console.log("jQuery is available.");
-    } else {
-        // jQuery is not available on this page
-        console.log("jQuery is not available.");
-    }
-
     $(document).ready(function () {
-        alert("test");
-        $("#openPopupButton").click(function () {
-            $("#popupBackground").show();
-            $("#popupDialog").show();
+         $(".create-popup").click(function () {
+            $(".create-popup-background").show();
+            $(".create-popup-dialog").show();
         });
 
-        $("#closePopupButton").click(function () {
-            $("#popupBackground").hide();
-            $("#popupDialog").hide();
+        $(".create-close-popup").click(function () {
+            $(".create-popup-background").hide();
+            $(".create-popup-dialog").hide();
         });
+
+        $(".edit-popup").click(function () {
+            var target = $(this).data('target');
+            console.log(target);
+            $("#"+target+".edit-popup-background").show();
+            $("#" +target+ " .edit-popup-dialog").show();
+        });
+
+        $(".edit-close-popup").click(function () {
+            $(".edit-popup-background").hide();
+            $(".edit-popup-dialog").hide();
+        });
+
+        $(".delete-popup").click(function () {
+            var target = $(this).data('target');
+            console.log(target);
+            $("#" + target + ".delete-popup-background").show();
+            $("#" + target + " .delete-popup-dialog").show();
+        });
+
+        $(".delete-close-popup").click(function () {
+            $(".delete-popup-background").hide();
+            $(".delete-popup-dialog").hide();
+        });
+
+       
     });
 </script>

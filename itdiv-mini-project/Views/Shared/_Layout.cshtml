@@ -15,13 +15,18 @@
 <body>
     <header>
         <nav class="my-navbar">
-            <div class="container">
-                <ul class="my-nav-list">
+            <div class="container"> 
                 <a class="my-brand" asp-area="" asp-controller="Home" asp-action="Index">Wearhouse</a>
+                    <div class="my-burger-menu">
+                        <div class="burger-bar"></div>
+                        <div class="burger-bar"></div>
+                        <div class="burger-bar"></div>
+                    </div>
+                
+                <ul class="my-nav-list">
                     <li><a asp-area="" asp-controller="Categories" asp-action="Index">Category</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About Us</a></li>
-                </ul>
-                <ul class="my-nav-list">
+                   
                      @if (User.Identity.IsAuthenticated)
                     {
                         <li><a asp-area="" asp-controller="" asp-action="">@User.FindFirst("Name")?.Value</a></li>
@@ -52,6 +57,11 @@
      </footer>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        document.querySelector('.my-burger-menu').addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 
