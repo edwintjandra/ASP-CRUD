@@ -58,7 +58,6 @@ html {
 
 .my-navbar .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 15px 0;
 }
@@ -69,6 +68,12 @@ html {
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content:space-between;
+    width:100%;
+}
+
+ .my-nav-list div {
+    display:flex;
 }
 
 .my-nav-list li {
@@ -337,6 +342,17 @@ html {
     .my-burger-menu {
         display: flex;
     }
+
+
+    .my-navbar .container {
+        display: flex;
+        justify-content:space-between;
+    }
+
+
+        .my-nav-list div {
+            display: block;
+        }
 
     .my-nav-list {
         display: none; /* Hide the navigation links initially on smaller screens */

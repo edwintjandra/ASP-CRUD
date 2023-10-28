@@ -24,9 +24,12 @@
                     </div>
                 
                 <ul class="my-nav-list">
-                    <li><a asp-area="" asp-controller="Categories" asp-action="Index">Category</a></li>
+                    <div>
+                        <li><a asp-area="" asp-controller="Categories" asp-action="Index">Category</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About Us</a></li>
-                   
+                    </div>
+
+                <div>
                      @if (User.Identity.IsAuthenticated)
                     {
                         <li><a asp-area="" asp-controller="" asp-action="">@User.FindFirst("Name")?.Value</a></li>
@@ -40,6 +43,7 @@
                         <li><a asp-area="" asp-controller="User" asp-action="Register">Register</a></li>
                         <li><a asp-area="" asp-controller="User" asp-action="Login">Login</a></li>
                     }
+            </div>
                      
                 </ul>
             </div>
