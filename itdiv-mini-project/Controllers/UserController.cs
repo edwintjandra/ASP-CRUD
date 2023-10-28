@@ -28,7 +28,7 @@ namespace itdiv_mini_project.Controllers
         //registration functionallity
         //register validation with model done.
         [HttpPost]
-        public string Registration(User account)
+        public async Task<IActionResult> Registration(User account)
         {
             if (ModelState.IsValid)
             {
@@ -39,15 +39,15 @@ namespace itdiv_mini_project.Controllers
                 con.Close();
                 if (i > 0)
                 {
-                    return "Data inserted successfully";
+                    return Redirect("/User/Login"); // Redirect to the desired page
                 }
                 else
                 {
-                    return "Error";
+                    return Redirect("/");
                 }
             }
             else {
-                return "Validation failed. Please check your input.";
+                return Redirect("/");
 
             }
 

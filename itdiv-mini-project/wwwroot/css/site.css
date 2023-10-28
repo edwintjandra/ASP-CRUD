@@ -85,13 +85,13 @@ html {
 }
 
 .footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     background-color: #232323;
-    color:white;
-    padding:20px;
+    color: white;
+    padding: 20px;
 }
 
 .form {
@@ -369,6 +369,17 @@ html {
     /* Show the navigation links when the burger button is clicked */
     .my-burger-menu.active + .my-nav-list {
         display: flex;
+    }
+    .about-page {
+        width:inherit;
+    }
+
+    .footer .icons {
+        width: 15%;
+    }
+
+    .footer {
+        width:90%;
     }
 }
 
